@@ -1,4 +1,13 @@
 {
+  "name": "jest-testing-tutorial",
+  "version": "1.0.0",
+  "description": "Unit testing using the Jest Framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Robert Hieger",
+  "license": "MIT",
   "devDependencies": {
     "jest": "^26.6.1"
   }
