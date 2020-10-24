@@ -1,6 +1,6 @@
-MIT License
+# MIT License
 
-Copyright (c) 2020 Robert Hieger
+## Copyright &copy; 2020 Robert Hieger
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
