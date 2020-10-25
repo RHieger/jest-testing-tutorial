@@ -191,3 +191,15 @@ describe("Calculator: Number Matchers", () => {
     expect(greaterThanOrEqualNumber).toBeGreaterThanOrEqual(750.03)
   });
 });
+
+describe("String Matchers", () => {
+  const myString = "Any string value contains substrings.";
+  const mySubString = myString.substring(26, 35);
+  const myFailedString = "strange";
+  test("'substrings' is contained in myString", () => {
+    expect(mySubString).toMatch(/substring/)
+  });
+  test("'strong' is not contained in myFailedString", () => {
+    expect(myFailedString).not.toMatch(/strong/)
+  });
+});
