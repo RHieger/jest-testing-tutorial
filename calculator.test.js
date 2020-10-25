@@ -1,4 +1,8 @@
-const { mathOperations, truthiness } = require("./calculator");
+const {
+  mathOperations,
+  truthiness,
+  numberMatchers
+} = require("./calculator");
 
 describe("Calculator tests", () => {
   test("adding 17 + 33 should return 50", () => {
@@ -166,5 +170,24 @@ describe("Calculator Matchers: Truthiness", () => {
   });
   test("0 should evaluate as falsy", () => {
     expect( truthiness.evaluatesFalsy(0) ).toBeFalsy()
+  });
+});
+
+describe("Calculator: Number Matchers", () => {
+  const greaterThanNumber = -7;
+  const lessThanNumber = 100;
+  const lessThanOrEqualNumber = 195;
+  const greaterThanOrEqualNumber = 750.59;
+  test("-7 is greater than -15", () => {
+    expect(greaterThanNumber).toBeGreaterThan(-15)
+  });
+  test("100 > 500", () => {
+    expect(lessThanNumber).toBeLessThan(500)
+  });
+  test("195 <= 195", () => {
+    expect(lessThanOrEqualNumber).toBeLessThanOrEqual(195)
+  });
+  test("750.59 >= 750.03", () => {
+    expect(greaterThanOrEqualNumber).toBeGreaterThanOrEqual(750.03)
   });
 });
