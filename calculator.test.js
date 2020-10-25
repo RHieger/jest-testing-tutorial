@@ -1,4 +1,4 @@
-const mathOperations = require('./calculator');
+const { mathOperations, truthiness } = require("./calculator");
 
 describe("Calculator tests", () => {
   test("adding 17 + 33 should return 50", () => {
@@ -144,5 +144,27 @@ describe("Calculator Matchers: Equality/Inequality", () => {
   });
   test("-32 / 5 should not leave a remainder of 2", () => {
     expect( mathOperations.modulus(-32, 5) ).not.toBe(2)
+  });
+});
+
+describe("Calculator Matchers: Truthiness", () => {
+  test("myNullValue should evaluate null", () => {
+    const myNullValue = null;
+    expect( truthiness.evaluatesNull(myNullValue) ).toBeNull()
+  });
+  test("'Bobby' should not evaluate null", () => {
+    const myName = "Bobby";
+    expect( truthiness.evaluatesNotNull(myName) ).not.toBeNull()
+  });
+  test("'A truthy value' should evaluate as truthy", () => {
+    const truthyValue = "A truthy value";
+    expect( truthiness.evaluatesTruthy(truthyValue) ).toBeTruthy()
+  });
+  test("NaN, 'twenty' evaluated as number, should evaluate as falsy", () => {
+    const notNumber = "twenty";
+    expect( truthiness.evaluatesFalsy(notNumber) ).toBeFalsy()
+  });
+  test("0 should evaluate as falsy", () => {
+    expect( truthiness.evaluatesFalsy(0) ).toBeFalsy()
   });
 });

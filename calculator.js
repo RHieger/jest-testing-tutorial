@@ -16,4 +16,22 @@ const mathOperations = {
   }
 };
 
-module.exports = mathOperations;
+const truthiness = {
+  evaluatesNull: function(value) {
+    return value = null;
+  },
+  evaluatesNotNull: function(value) {
+    return value !== null;
+  },
+  evaluatesTruthy: function(value) {
+    return value = true;
+  },
+  evaluatesFalsy: function(value) {
+    return value = false;
+  }
+};
+
+module.exports = {
+  mathOperations,
+  truthiness
+};
