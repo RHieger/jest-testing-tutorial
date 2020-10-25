@@ -53,3 +53,96 @@ describe("Calculator tests", () => {
       expect( mathOperations.modulus(12, 9) ).toBe(3)
   });
 });
+
+describe("Calculator Matchers: Equality/Inequality", () => {
+  test("4 + 3 should equal 7", () => {
+    expect( mathOperations.sum(4, 3) ).toBe(7)
+  });
+  test("-5 + -6 should equal -11", () => {
+    expect( mathOperations.sum(-5, -6) ).toBe(-11)
+  });
+  test("-7 + 13 should equal 6", () => {
+    expect( mathOperations.sum(-7, 13) ).toBe(6)
+  });
+  test("3 + 3 should not equal 33", () => {
+    expect( mathOperations.sum(3, 3) ).not.toBe(33)
+  });
+  test("-3 + 7 should not equal 10", () => {
+    expect( mathOperations.sum(-3, 7) ).not.toBe(33)
+  });
+  test("-7 + -3 should not equal 10", () => {
+    expect( mathOperations.sum(-7, -3) ).not.toBe(10)
+  });
+  test("7 - 3 should equal 4", () => {
+    expect( mathOperations.difference(7, 3) ).toBe(4)
+  });
+  test("-10 - 5 should equal -15", () => {
+    expect( mathOperations.difference(-10, 5) ).toBe(-15)
+  });
+  test("-10 - -25 should equal 15", () => {
+    expect( mathOperations.difference(-10, -25) ).toBe(15)
+  });
+  test("10 - -5 should not equal 5", () => {
+    expect( mathOperations.difference(10, -5) ).not.toBe(5)
+  });
+  test("32 - 3 should not equal 30", () => {
+    expect( mathOperations.difference(32, 3) ).not.toBe(30)
+  });
+  test("22 - 23 should not equal 1", () => {
+    expect( mathOperations.difference(22, 23) ).not.toBe(1)
+  });
+  test("3 * 3 should equal 9", () => {
+    expect( mathOperations.product(3, 3) ).toBe(9)
+  });
+  test("8 * -7 should equal -56", () => {
+    expect( mathOperations.product(8, -7) ).toBe(-56)
+  });
+  test("-8 * -8 should equal 64", () => {
+    expect( mathOperations.product(-8, -8) ).toBe(64)
+  });
+  test("11 * 5 should not equal 38", () => {
+    expect( mathOperations.product(11, 5) ).not.toBe(38)
+  });
+  test("-22 * -2 should not equal -44", () => {
+    expect( mathOperations.product(-22, -2) ).not.toBe(-44)
+  });
+  test("10 * 2.5 should not equal 30", () => {
+    expect( mathOperations.product(10, 2.5) ).not.toBe(30)
+  });
+  test("7 / 2 should equal 3.5", () => {
+    expect( mathOperations.quotient(7, 2) ).toBe(3.5)
+  });
+  test("122 / 2 should equal 61", () => {
+    expect( mathOperations.quotient(122, 2) ).toBe(61)
+  });
+  test("-7 / 2 should equal -3.5", () => {
+    expect( mathOperations.quotient(-7, 2) ).toBe(-3.5)
+  });
+  test("10 / 3 should not equal 3", () => {
+    expect( mathOperations.quotient(10, 3) ).not.toBe(3)
+  });
+  test("-6 / 2 should not equal -2", () => {
+    expect( mathOperations.quotient(-6, 2) ).not.toBe(-2)
+  });
+  test("72 / 11 should not equal 9", () => {
+    expect( mathOperations.quotient(72, 11) ).not.toBe(9)
+  });
+  test("33 / 3 should leave a remainder of 0", () => {
+    expect( mathOperations.modulus(33, 3) ).toBe(0)
+  });
+  test("46 / 4 should leave a remainder of 2", () => {
+    expect( mathOperations.modulus(46, 4) ).toBe(2)
+  });
+  test("-29 / 3 should leave a remainder of -2", () => {
+    expect( mathOperations.modulus(-29, 3) ).toBe(-2)
+  });
+  test("10 / 3 should not leave a remainder of 0", () => {
+    expect( mathOperations.modulus(10, 3) ).not.toBe(0)
+  });
+  test("25 / 3 should not leave a remainder of 3", () => {
+    expect( mathOperations.modulus(25, 3) ).not.toBe(3)
+  });
+  test("-32 / 5 should not leave a remainder of 2", () => {
+    expect( mathOperations.modulus(-32, 5) ).not.toBe(2)
+  });
+});
